@@ -1,0 +1,63 @@
+# send template api
+email:
+  templateApi: "https://api.sendgrid.com/v3/mail/send"
+logging:
+  config: classpath:logback-sendgrid.xml
+management:
+  security:
+    enabled: false
+---
+spring:
+  profiles: test
+  sendgrid:
+    api-key: "xxxx"
+
+# MONGODB (MongoProperties)
+  data:
+    mongodb:
+      username: xx
+      password: Xxx
+      database: xx
+      host: 18.xx.xx.150
+      port: 27017
+      repositories:
+        enabled: true
+server:
+  port: 1225
+
+---
+spring:
+  profiles: dev
+  sendgrid:
+      api-key: "xxx"
+# MONGODB (MongoProperties)
+  data:
+    mongodb:
+      username: xx
+      password: Xxx
+      database: xx
+      host: 18.xx.xx.150
+      port: 27017
+      repositories:
+        enabled: true
+server:
+  port: 1225
+
+---
+spring:
+  profiles: prod
+  sendgrid:
+    api-key: "xx"
+# MONGODB (MongoProperties)
+  data:
+    mongodb:
+      username: xx
+      password: Xxx
+      database: xx
+      host: 18.xx.xx.150
+      port: 27017
+      repositories:
+        enabled: true
+server:
+  port: 1225
+
